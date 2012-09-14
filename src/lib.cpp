@@ -259,7 +259,7 @@ void format_watts(double W, char *buffer, unsigned int len)
 	if (W < 0.0001)
 		sprintf(buffer, _("    0 mW"));
 
-	while (mbstowcs(NULL,buffer,0) < len)
+	while (mbstowcs(NULL,buffer,len) < len)
 		strcat(buffer, " ");
 }
 

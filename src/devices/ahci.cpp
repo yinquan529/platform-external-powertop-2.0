@@ -170,7 +170,7 @@ void ahci::start_measurement(void)
 		file.close();
 	}
 	catch (std::ios_base::failure &c) {
-		fprintf(stderr, "%s\n", c.what());
+		fprintf(stderr, "Failed to start measurement for ahci device\n");
 	}
 
 }
@@ -203,7 +203,7 @@ void ahci::end_measurement(void)
 		file.close();
 	}
 	catch (std::ios_base::failure &c) {
-		fprintf(stderr, "%s\n", c.what());
+		fprintf(stderr, "Failed to end measurement for ahci device\n");
 	}
 	if (end_active < start_active)
 		end_active = start_active;

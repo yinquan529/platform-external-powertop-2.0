@@ -42,7 +42,9 @@
 #include "perf/perf.h"
 #include "perf/perf_bundle.h"
 #include "lib.h"
+#ifdef HAVE_CONFIG_H
 #include "../config.h"
+#endif
 
 
 #include "devices/device.h"

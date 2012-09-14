@@ -104,7 +104,7 @@ void alsa::start_measurement(void)
 		file.close();
 	}
 	catch (std::ios_base::failure &c) {
-		fprintf(stderr, "%s\n", c.what());
+		fprintf(stderr, "Failed to start measurement for alsa device\n");
 	}
 }
 
@@ -130,7 +130,7 @@ void alsa::end_measurement(void)
 		file.close();
 	}
 	catch (std::ios_base::failure &c) {
-		fprintf(stderr, "%s\n", c.what());
+		fprintf(stderr, "Failed to end measurement for alsa device\n");
 	}
 
 	p = (end_active - start_active) / (0.001 + end_active + end_inactive - start_active - start_inactive) * 100.0;
