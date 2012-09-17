@@ -33,6 +33,10 @@
 #include "config.h"
 #endif
 
+#ifdef __ANDROID__
+#include "android_stubs.h"
+#endif
+
 #define _(STRING)    gettext(STRING)
 
 #define POWERTOP_VERSION "v2.1"
