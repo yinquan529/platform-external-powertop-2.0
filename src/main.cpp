@@ -349,6 +349,16 @@ int main(int argc, char **argv)
 	bindtextdomain (PACKAGE, LOCALEDIR);
 	textdomain (PACKAGE);
 
+#ifdef DEFAULT_TERM
+	if (!getenv("TERM"))
+		setenv("TERM", DEFAULT_TERM, 1);
+#endif
+
+#ifdef TERMINFO_PATH
+	if (!getenv("TERMINFO"))
+		setenv("TERMINFO", TERMINFO_PATH, 1);
+#endif
+
 	while (1) { /* parse commandline options */
 		c = getopt_long (argc, argv, "ch:C:i:t:uVw:q", long_options, &option_index);
 		/* Detect the end of the options. */
