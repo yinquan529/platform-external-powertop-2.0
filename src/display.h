@@ -74,6 +74,12 @@ public:
 		delwin(win);
 		win = NULL;
 	}
+
+	tab_window(void)
+	{
+		xpad_pos = 0;
+		ypad_pos = 0;
+	}
 };
 
 extern map<string, class tab_window *> tab_windows;

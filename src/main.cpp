@@ -48,6 +48,7 @@
 
 
 #include "devices/device.h"
+#include "devices/devfreq.h"
 #include "devices/usb.h"
 #include "measurement/measurement.h"
 #include "parameters/parameters.h"
@@ -55,6 +56,7 @@
 
 
 #include "tuning/tuning.h"
+#include "devices/devfreq.h"
 
 #include "display.h"
 #include "devlist.h"
@@ -189,6 +191,7 @@ void one_measurement(int seconds, char *workload)
 	create_all_usb_devices();
 	start_power_measurement();
 	devices_start_measurement();
+	start_devfreq_measurement();
 	start_process_measurement();
 	start_cpu_measurement();
 
@@ -201,6 +204,7 @@ void one_measurement(int seconds, char *workload)
 	end_cpu_measurement();
 	end_process_measurement();
 	collect_open_devices();
+	end_devfreq_measurement();
 	devices_end_measurement();
 	end_power_measurement();
 
@@ -227,6 +231,8 @@ void one_measurement(int seconds, char *workload)
 	report_show_open_devices();
 
 	report_devices();
+	display_devfreq_devices();
+	report_devfreq_devices();
 
 	store_results(measurement_time);
 	end_cpu_data();
@@ -319,6 +325,7 @@ static void powertop_init(void)
 
 	enumerate_cpus();
 	create_all_devices();
+	create_all_devfreq_devices();
 	detect_power_meters();
 
 	register_parameter("base power", 100, 0.5);
@@ -438,6 +445,7 @@ int main(int argc, char **argv)
 
 	/* first one is short to not let the user wait too long */
 	init_display();
+	initialize_devfreq();
 	one_measurement(1, NULL);
 	initialize_tuning();
 	tuning_update_display();
@@ -465,6 +473,7 @@ int main(int argc, char **argv)
 	reset_display();
 
 	clear_all_devices();
+	clear_all_devfreq();
 	clear_all_cpus();
 
 	return 0;

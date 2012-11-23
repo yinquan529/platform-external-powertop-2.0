@@ -90,6 +90,7 @@ LOCAL_SRC_FILES += \
 	src/devices/backlight.cpp \
 	src/devices/network.cpp \
 	src/devices/device.cpp \
+	src/devices/devfreq.cpp \
 	src/devlist.cpp \
 	src/calibrate/calibrate.cpp \
 	src/lib.cpp \

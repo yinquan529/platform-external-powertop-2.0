@@ -289,6 +289,7 @@ void show_report_devices(void)
 		report.begin_cell();
 		report.add(all_devices[i]->human_name());
 	}
+
 }
 
 

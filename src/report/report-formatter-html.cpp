@@ -68,6 +68,7 @@ report_formatter_html::init_markup()
 	set_section(SECTION_DEVPOWER,	"device");
 	set_section(SECTION_SOFTWARE,	"software");
 	set_section(SECTION_SUMMARY,	"summary");
+	set_section(SECTION_DEVFREQ,	"devfreq");
 	set_section(SECTION_TUNING,	"tuning");
 
 	/*	  ttype		 width */
