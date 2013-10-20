@@ -5,6 +5,7 @@
  * runtime. Handled at higher level in application stack.
  * So define stubs for gettext funtions used.
  */
+#define PACKAGE_VERSION		"2.4"
 #define PACKAGE			0
 #define LOCALEDIR		0
 #define bindtextdomain(x, y)

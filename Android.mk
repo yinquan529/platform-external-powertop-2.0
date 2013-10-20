@@ -9,12 +9,10 @@ LOCAL_SHARED_LIBRARIES := libstlport \
 
 LOCAL_STATIC_LIBRARIES := libncurses
 
-CSSTOH_SOURCE := $(LOCAL_PATH)/src/csstoh.c
 POWERTOP_CSS_SOURCE := $(LOCAL_PATH)/src/powertop.css
-GEN_CSSTOH := $(LOCAL_PATH)/src/csstoh
+GEN_CSSTOH := $(LOCAL_PATH)/src/csstoh.sh
 GEN_CSS_H := $(LOCAL_PATH)/src/css.h
 $(GEN_CSS_H):
-	$(CC) -o $(GEN_CSSTOH) $(CSSTOH_SOURCE)
 	./$(GEN_CSSTOH) $(POWERTOP_CSS_SOURCE) $@
 
 LOCAL_GENERATED_SOURCES += $(GEN_CSS_H)
@@ -54,9 +52,11 @@ LOCAL_SRC_FILES += \
 	src/cpu/cpu_core.cpp \
 	src/cpu/cpu_package.cpp \
 	src/cpu/abstract_cpu.cpp \
+	src/cpu/cpu_rapl_device.cpp \
+	src/cpu/dram_rapl_device.cpp \
+	src/cpu/rapl/rapl_interface.cpp \
 	src/measurement/measurement.cpp \
 	src/measurement/acpi.cpp \
-	src/measurement/sysfs.cpp \
 	src/measurement/extech.cpp \
 	src/measurement/sysfs.cpp \
 	src/display.cpp \
@@ -91,6 +91,7 @@ LOCAL_SRC_FILES += \
 	src/devices/network.cpp \
 	src/devices/device.cpp \
 	src/devices/devfreq.cpp \
+	src/devices/gpu_rapl_device.cpp \
 	src/devlist.cpp \
 	src/calibrate/calibrate.cpp \
 	src/lib.cpp \
