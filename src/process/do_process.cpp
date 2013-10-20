@@ -187,19 +187,6 @@ int dont_blame_me(char *comm)
 	return 0;
 }
 
-static void dbg_printf_pevent_info(struct event_format *event, struct pevent_record *rec)
-{
-	static struct trace_seq s;
-
-	event->pevent->print_raw = 1;
-	trace_seq_init(&s);
-	pevent_event_info(&s, event, rec);
-	trace_seq_putc(&s, '\n');
-	trace_seq_terminate(&s);
-	fprintf(stderr, "%.*s", s.len, s.buffer);
-	trace_seq_destroy(&s);
-}
-
 static char * get_pevent_field_str(void *trace, struct event_format *event, struct format_field *field)
 {
 	unsigned long long offset, len;
@@ -592,7 +579,7 @@ void perf_process_bundle::handle_trace_point(void *trace, int cpu, uint64_t time
 	}
 	else if (strcmp(event->name, "cpu_idle") == 0) {
 		ret = pevent_get_field_val(NULL, event, "state", &rec, &val, 0);
-		if (val == 4294967295)
+		if (val == (unsigned int)-1)
 			consume_blame(cpu);
 		else
 			set_wakeup_pending(cpu);
@@ -865,13 +852,13 @@ void process_update_display(void)
 		char usage[20];
 		char events[20];
 		char descr[128];
-		format_watts(all_power[i]->Witts(), power, 10);
 
+		format_watts(all_power[i]->Witts(), power, 10);
 		if (!show_power)
 			strcpy(power, "          ");
 		sprintf(name, "%s", all_power[i]->type());
-		while (mbstowcs(NULL,name,20) < 14) strcat(name, " ");
 
+		align_string(name, 14, 20);
 
 		if (all_power[i]->events() == 0 && all_power[i]->usage() == 0 && all_power[i]->Witts() == 0)
 			break;
@@ -883,14 +870,15 @@ void process_update_display(void)
 			else
 				sprintf(usage, "%5i%s", (int)all_power[i]->usage(), all_power[i]->usage_units());
 		}
-		while (mbstowcs(NULL,usage,20) < 14) strcat(usage, " ");
+		align_string(usage, 14, 20);
+
 		sprintf(events, "%5.1f", all_power[i]->events());
 		if (!all_power[i]->show_events())
 			events[0] = 0;
 		else if (all_power[i]->events() <= 0.3)
 			sprintf(events, "%5.2f", all_power[i]->events());
 
-		while (strlen(events) < 12) strcat(events, " ");
+		align_string(events, 12, 20);
 		wprintw(win, "%s  %s %s %s %s\n", power, usage, events, name, pretty_print(all_power[i]->description(), descr, 128));
 	}
 }

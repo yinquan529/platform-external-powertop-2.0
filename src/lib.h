@@ -39,9 +39,10 @@
 
 #define _(STRING)    gettext(STRING)
 
-#define POWERTOP_VERSION "v2.1"
-#define POWERTOP_SHORT_VERSION "2.1"
+#define POWERTOP_VERSION "v"PACKAGE_VERSION
+#define POWERTOP_SHORT_VERSION PACKAGE_VERSION
 
+extern int is_turbo(uint64_t freq, uint64_t max, uint64_t maxmo);
 
 extern int get_max_cpu(void);
 extern void set_max_cpu(int cpu);
@@ -77,5 +78,10 @@ typedef void (*callback)(const char*);
 extern void process_directory(const char *d_name, callback fn);
 extern int utf_ok;
 extern int get_user_input(char *buf, unsigned sz);
+extern int read_msr(int cpu, uint64_t offset, uint64_t *value);
+extern int write_msr(int cpu, uint64_t offset, uint64_t value);
 
+extern void align_string(char *buffer, size_t min_sz, size_t max_sz);
+
+extern void ui_notify_user(const char *frmt, ...);
 #endif

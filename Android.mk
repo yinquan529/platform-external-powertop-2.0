@@ -58,7 +58,7 @@ LOCAL_SRC_FILES += \
 	src/measurement/acpi.cpp \
 	src/measurement/sysfs.cpp \
 	src/measurement/extech.cpp \
-	src/measurement/power_supply.cpp \
+	src/measurement/sysfs.cpp \
 	src/display.cpp \
 	src/report/report.cpp \
 	src/report/report-maker.cpp \

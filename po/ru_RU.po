@@ -1,0 +1,606 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Intel Corporation
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# JIghtuse <jightuse@gmail.com>, 2013
+# JIghtuse <jightuse@gmail.com>, 2012
+msgid ""
+msgstr ""
+"Project-Id-Version: PowerTOP\n"
+"Report-Msgid-Bugs-To: \"powertop@lists.01.org\"\n"
+"POT-Creation-Date: 2013-02-25 10:05-0800\n"
+"PO-Revision-Date: 2013-04-29 09:02+0000\n"
+"Last-Translator: ceferron <chris.e.ferron@linux.intel.com>\n"
+"Language-Team: Russian (Russia) (http://www.transifex.com/projects/p/PowerTOP/language/ru_RU/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/parameters/persistent.cpp:46 src/parameters/persistent.cpp:140
+msgid "Cannot save to file"
+msgstr "Невозможно сохранить в файл"
+
+#: src/parameters/persistent.cpp:78 src/parameters/persistent.cpp:165
+msgid "Cannot load from file"
+msgstr "Невозможно загрузить из файла"
+
+#: src/parameters/persistent.cpp:123
+#, c-format
+msgid "Loaded %i prior measurements\n"
+msgstr "Загрузка %i предварительных замеров\\n"
+
+#: src/display.cpp:70
+msgid "Overview"
+msgstr "Обзор"
+
+#: src/display.cpp:71
+msgid "Idle stats"
+msgstr "Статистика простоя"
+
+#: src/display.cpp:72
+msgid "Frequency stats"
+msgstr "Статистика частоты"
+
+#: src/display.cpp:73
+msgid "Device stats"
+msgstr "Статистика устройств"
+
+#: src/display.cpp:130
+msgid "Exit"
+msgstr "Выход"
+
+#: src/cpu/cpu_core.cpp:37 src/cpu/cpu_core.cpp:93 src/cpu/intel_cpus.cpp:201
+#, c-format
+msgid "  Core"
+msgstr "Ядро"
+
+#: src/cpu/cpu.cpp:94
+#, c-format
+msgid "cpu package %i"
+msgstr "упаковка процессора %i"
+
+#: src/cpu/cpu.cpp:95
+msgid "cpu package"
+msgstr "упаковка процессора"
+
+#: src/cpu/cpu.cpp:446 src/cpu/cpu.cpp:573
+#, c-format
+msgid "Package %i"
+msgstr "Упаковка %i"
+
+#: src/cpu/cpu.cpp:478 src/cpu/cpu.cpp:593
+#, c-format
+msgid "Core %i"
+msgstr "Ядро %i"
+
+#: src/cpu/cpu.cpp:480
+#, c-format
+msgid "GPU %i"
+msgstr "GPU %i"
+
+#: src/cpu/cpu.cpp:502 src/cpu/cpu.cpp:614
+#, c-format
+msgid "CPU %i"
+msgstr "CPU %i"
+
+#: src/cpu/cpu.cpp:796
+#, c-format
+msgid "cpu_idle event returned no state?\n"
+msgstr "событие cpu_idle не вернуло состояния?\\n"
+
+#: src/cpu/cpu.cpp:811
+#, c-format
+msgid "power or cpu_frequency event returned no state?\n"
+msgstr "события power или cpu_frequency не вернули состояния?\\n"
+
+#: src/cpu/cpu_linux.cpp:79
+msgid "C0 polling"
+msgstr "опрос C0"
+
+#: src/cpu/cpu_linux.cpp:240 src/cpu/cpu_linux.cpp:339
+#: src/cpu/intel_cpus.cpp:423
+#, c-format
+msgid " CPU %i"
+msgstr "CPU %i"
+
+#: src/cpu/cpu_package.cpp:47
+#, c-format
+msgid "Package"
+msgstr "Упаковка"
+
+#: src/cpu/cpu_package.cpp:105 src/cpu/intel_cpus.cpp:226
+#, c-format
+msgid "  Package"
+msgstr "Упаковка"
+
+#: src/cpu/intel_cpus.cpp:61
+#, c-format
+msgid "msr reg not found"
+msgstr "msr reg не найдено"
+
+#: src/cpu/intel_cpus.cpp:71
+#, c-format
+msgid "pread cpu%d 0x%llx : "
+msgstr "pread cpu%d 0x%llx :"
+
+#: src/cpu/intel_cpus.cpp:347
+msgid "C0 active"
+msgstr "активно C0"
+
+#: src/cpu/intel_cpus.cpp:406
+#, c-format
+msgid "Actual"
+msgstr "Действительная"
+
+#: src/lib.cpp:266
+#, c-format
+msgid "%7sW"
+msgstr "%7sВ"
+
+#: src/lib.cpp:269
+#, c-format
+msgid "    0 mW"
+msgstr "0 мВ"
+
+#: src/lib.cpp:390
+msgid "PS/2 Touchpad / Keyboard / Mouse"
+msgstr "PS/2 Тачпад/Клавиатура/Мышь"
+
+#: src/lib.cpp:391
+msgid "SATA controller"
+msgstr "Контроллер SATA"
+
+#: src/lib.cpp:392
+msgid "Intel built in USB hub"
+msgstr "Встроенный USB-хаб Intel"
+
+#: src/process/do_process.cpp:817
+#, c-format
+msgid ""
+"Estimated power: %5.1f    Measured power: %5.1f    Sum: %5.1f\n"
+"\n"
+msgstr "Оценочное потребление: %5.1f\\t Измеренное потребление: %5.1f\\t Суммарно: %5.1f\\n \\n"
+
+#: src/process/do_process.cpp:828 src/devices/device.cpp:171
+#, c-format
+msgid "The battery reports a discharge rate of %sW\n"
+msgstr "Аккумулятор сообщает о скорости разряда в %sВт\\n"
+
+#: src/process/do_process.cpp:833
+#, c-format
+msgid "The estimated remaining time is %i hours, %i minutes\n"
+msgstr "Оценочное время работы %i часов, %i минут\\n"
+
+#: src/process/do_process.cpp:841
+msgid "Summary"
+msgstr "Суммарно"
+
+#: src/process/do_process.cpp:841 src/process/do_process.cpp:1011
+msgid "wakeups/second"
+msgstr "пробуждений/секунду"
+
+#: src/process/do_process.cpp:841
+msgid "GPU ops/seconds"
+msgstr "GPU операций/секунду"
+
+#: src/process/do_process.cpp:841
+msgid "VFS ops/sec and"
+msgstr "VFS операций/с и"
+
+#: src/process/do_process.cpp:841 src/process/do_process.cpp:1015
+msgid "CPU use"
+msgstr "Использование CPU"
+
+#: src/process/do_process.cpp:845 src/process/do_process.cpp:902
+#: src/process/do_process.cpp:1021
+msgid "Power est."
+msgstr "Оценка потребления"
+
+#: src/process/do_process.cpp:845 src/process/do_process.cpp:847
+#: src/process/do_process.cpp:906 src/process/do_process.cpp:1025
+msgid "Usage"
+msgstr "Использование"
+
+#: src/process/do_process.cpp:845 src/process/do_process.cpp:847
+#: src/process/do_process.cpp:1027
+msgid "Events/s"
+msgstr "Событий/с"
+
+#: src/process/do_process.cpp:845 src/process/do_process.cpp:847
+#: src/process/do_process.cpp:916 src/process/do_process.cpp:1029
+msgid "Category"
+msgstr "Категория"
+
+#: src/process/do_process.cpp:845 src/process/do_process.cpp:847
+#: src/process/do_process.cpp:918 src/process/do_process.cpp:1031
+msgid "Description"
+msgstr "Описание"
+
+#: src/process/do_process.cpp:897
+msgid "Overview of Software Power Consumers"
+msgstr "Обзор программных потребителей энергии"
+
+#: src/process/do_process.cpp:908
+msgid "Wakeups/s"
+msgstr "Пробуждений/с"
+
+#: src/process/do_process.cpp:910
+msgid "GPU ops/s"
+msgstr "GPU операций/с"
+
+#: src/process/do_process.cpp:912
+msgid "Disk IO/s"
+msgstr "Диск ввод-вывод/с"
+
+#: src/process/do_process.cpp:914
+msgid "GFX Wakeups/s"
+msgstr "GFX пробуждений/с"
+
+#: src/process/do_process.cpp:1008
+msgid "Power Consumption Summary"
+msgstr "Суммарное потребление энергии"
+
+#: src/process/do_process.cpp:1012
+msgid "GPU ops/second"
+msgstr "GPU операций/секунду"
+
+#: src/process/do_process.cpp:1013
+msgid "VFS ops/sec"
+msgstr "VFS операций/с"
+
+#: src/process/do_process.cpp:1014
+msgid "GFX wakes/sec and"
+msgstr "GFX пробуждений/секунду и"
+
+#: src/perf/perf.cpp:111
+#, c-format
+msgid "PowerTOP %s needs the kernel to support the 'perf' subsystem\n"
+msgstr "PowerTOP %s необходима поддержка подсистемы 'perf' ядра\\n"
+
+#: src/perf/perf.cpp:112
+#, c-format
+msgid "as well as support for trace points in the kernel:\n"
+msgstr "а также поддержка trace points в ядре:\\n"
+
+#: src/devices/device.cpp:177
+#, c-format
+msgid "System baseline power is estimated at %sW\n"
+msgstr "Базовая мощность системы оценена в %sВ\\n"
+
+#: src/devices/device.cpp:184
+msgid "Power est.    Usage     Device name\n"
+msgstr "Потребление\\t Использование\\t Название устройства\\n"
+
+#: src/devices/device.cpp:186
+msgid "              Usage     Device name\n"
+msgstr "Использование\\t Название устройства\\n"
+
+#: src/devices/alsa.cpp:79
+#, c-format
+msgid "Audio codec %s: %s (%s)"
+msgstr "Аудиокодек %s: %s (%s)"
+
+#: src/devices/alsa.cpp:81 src/devices/alsa.cpp:83
+#, c-format
+msgid "Audio codec %s: %s"
+msgstr "Аудиокодек %s: %s"
+
+#: src/devices/runtime_pm.cpp:225
+#, c-format
+msgid "PCI Device: %s"
+msgstr "PCI-устройство: %s"
+
+#: src/devices/usb.cpp:51 src/devices/usb.cpp:94 src/devices/usb.cpp:96
+#, c-format
+msgid "USB device: %s"
+msgstr "USB-устройство: %s"
+
+#: src/devices/usb.cpp:92
+#, c-format
+msgid "USB device: %s (%s)"
+msgstr "USB-устройство: %s (%s)"
+
+#: src/devices/ahci.cpp:140
+#, c-format
+msgid "SATA link: %s"
+msgstr "Линк SATA: %s"
+
+#: src/devices/ahci.cpp:142
+#, c-format
+msgid "SATA disk: %s"
+msgstr "Диск SATA: %s"
+
+#: src/devices/rfkill.cpp:65 src/devices/rfkill.cpp:69
+#, c-format
+msgid "Radio device: %s"
+msgstr "Радиоустройство: %s"
+
+#: src/devices/network.cpp:177
+#, c-format
+msgid "Network interface: %s (%s)"
+msgstr "Сетевой интерфейс: %s (%s)"
+
+#: src/tuning/bluetooth.cpp:48
+#, c-format
+msgid "Bluetooth device interface status"
+msgstr "Статус интерфейса bluetooth-устройства"
+
+#: src/tuning/cpufreq.cpp:44 src/tuning/ethernet.cpp:53
+#: src/tuning/tunable.cpp:48 src/tuning/wifi.cpp:45 src/tuning/runtime.cpp:41
+#: src/tuning/tuningusb.cpp:40 src/tuning/tuningsysfs.cpp:44
+msgid "Good"
+msgstr "Хорошо"
+
+#: src/tuning/cpufreq.cpp:44 src/tuning/ethernet.cpp:53
+#: src/tuning/tunable.cpp:49 src/tuning/wifi.cpp:45 src/tuning/runtime.cpp:41
+#: src/tuning/tuningusb.cpp:40 src/tuning/tuningsysfs.cpp:44
+msgid "Bad"
+msgstr "Плохо"
+
+#: src/tuning/cpufreq.cpp:44 src/tuning/ethernet.cpp:53
+#: src/tuning/tunable.cpp:50 src/tuning/wifi.cpp:45 src/tuning/runtime.cpp:41
+#: src/tuning/tuningusb.cpp:40 src/tuning/tuningsysfs.cpp:44
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: src/tuning/cpufreq.cpp:47
+#, c-format
+msgid "Using 'ondemand' cpufreq governor"
+msgstr "Использование регулятора cpufreq 'ondemand'"
+
+#: src/tuning/tuning.cpp:59
+msgid "Enable Audio codec power management"
+msgstr "Активировать управление питанием аудиокодека"
+
+#: src/tuning/tuning.cpp:60
+msgid "NMI watchdog should be turned off"
+msgstr "NMI watchdog должен быть отключен"
+
+#: src/tuning/tuning.cpp:61
+msgid "Power Aware CPU scheduler"
+msgstr "Энергосберегающий планировщик CPU"
+
+#: src/tuning/tuning.cpp:62
+msgid "VM writeback timeout"
+msgstr "Таймаут обратной записи VM"
+
+#: src/tuning/tuning.cpp:79
+msgid "Tunables"
+msgstr "Переключатели"
+
+#: src/tuning/tuning.cpp:79
+msgid " <ESC> Exit | <Enter> Toggle tunable | <r> Window refresh"
+msgstr "<ESC> Выход| <Enter> Переключить| <r> Обновить окно"
+
+#: src/tuning/ethernet.cpp:57
+#, c-format
+msgid "Wake-on-lan status for device %s"
+msgstr "Статус wake-on-lan для устройства %s"
+
+#: src/tuning/wifi.cpp:48
+#, c-format
+msgid "Wireless Power Saving for interface %s"
+msgstr "Энергосбережение для беспроводного интерфейса %s"
+
+#: src/tuning/runtime.cpp:47
+#, c-format
+msgid "Runtime PM for %s device %s"
+msgstr "УП времени выполнения для %s устройства %s"
+
+#: src/tuning/runtime.cpp:49
+#, c-format
+msgid "%s device %s has no runtime power management"
+msgstr "%s устройство %s не имеет управления питанием времени выполнения"
+
+#: src/tuning/runtime.cpp:73
+#, c-format
+msgid "PCI Device %s has no runtime power management"
+msgstr "PCI-устройство %s не имеет управления питанием времени выполнения"
+
+#: src/tuning/runtime.cpp:75
+#, c-format
+msgid "Runtime PM for PCI Device %s"
+msgstr "УП времени выполнения для PCI-устройства %s"
+
+#: src/tuning/tuningusb.cpp:55
+#, c-format
+msgid "Autosuspend for unknown USB device %s (%s:%s)"
+msgstr "Autosuspend для неизвестного USB-устройства %s (%s:%s)"
+
+#: src/tuning/tuningusb.cpp:72 src/tuning/tuningusb.cpp:74
+#: src/tuning/tuningusb.cpp:76
+#, c-format
+msgid "Autosuspend for USB device %s [%s]"
+msgstr "Autosuspend для USB-устройства %s [%s]"
+
+#: src/tuning/tuningsysfs.cpp:139
+#, c-format
+msgid "Enable SATA link power Managmenet for %s"
+msgstr "Активировать управление питанием линка SATA для %s"
+
+#: src/calibrate/calibrate.cpp:291
+#, c-format
+msgid "Cannot create temp file\n"
+msgstr "Невозможно создать временный файл\\n"
+
+#: src/calibrate/calibrate.cpp:310
+#, c-format
+msgid "Calibrating: CPU usage on %i threads\n"
+msgstr "Калибровка: использование CPU на %i потоках\\n"
+
+#: src/calibrate/calibrate.cpp:325
+#, c-format
+msgid "Calibrating: CPU wakeup power consumption\n"
+msgstr "Калибровка: потребление энергии пробуждения CPU\\n"
+
+#: src/calibrate/calibrate.cpp:342
+#, c-format
+msgid "Calibrating USB devices\n"
+msgstr "Калибровка USB-устройств\\n"
+
+#: src/calibrate/calibrate.cpp:344 src/calibrate/calibrate.cpp:361
+#: src/calibrate/calibrate.cpp:369 src/calibrate/calibrate.cpp:386
+#, c-format
+msgid ".... device %s \n"
+msgstr ".... устройство %s\\n"
+
+#: src/calibrate/calibrate.cpp:359
+#, c-format
+msgid "Calibrating radio devices\n"
+msgstr "Калибровка радиоустройств\\n"
+
+#: src/calibrate/calibrate.cpp:383
+#, c-format
+msgid "Calibrating backlight\n"
+msgstr "Калибровка подсветки монитора\\n"
+
+#: src/calibrate/calibrate.cpp:407 src/calibrate/calibrate.cpp:415
+#, c-format
+msgid "Calibrating idle\n"
+msgstr "Калибровка простоя\\n"
+
+#: src/calibrate/calibrate.cpp:426
+#, c-format
+msgid "Calibrating: disk usage \n"
+msgstr "Калибровка: использование диска\\n"
+
+#: src/calibrate/calibrate.cpp:451
+msgid "Starting PowerTOP power estimate calibration \n"
+msgstr "Запущена калибровка оценочного потребления энергии PowerTOP\\n"
+
+#: src/calibrate/calibrate.cpp:474
+msgid "Finishing PowerTOP power estimate calibration \n"
+msgstr "Завершена калибровка оценочного потребления энергии PowerTOP\\n"
+
+#: src/calibrate/calibrate.cpp:478
+#, c-format
+msgid "Parameters after calibration:\n"
+msgstr "Параметры после калибровки:\\n"
+
+#: src/main.cpp:86
+#, c-format
+msgid "PowerTOP version"
+msgstr "Версия PowerTOP"
+
+#: src/main.cpp:92
+msgid "Set refresh time out"
+msgstr "Задать время до обновления"
+
+#: src/main.cpp:105
+msgid "Usage: powertop [OPTIONS]"
+msgstr "Использование: powertop [OPTIONS]"
+
+#: src/main.cpp:106
+msgid "run in \"debug\" mode"
+msgstr "запуск в режиме \"debug\""
+
+#: src/main.cpp:107
+msgid "print version information"
+msgstr "печать информации о версии"
+
+#: src/main.cpp:108
+msgid "runs powertop in calibration mode"
+msgstr "запуск powertop в режиме калибровки"
+
+#: src/main.cpp:109
+msgid "[=devnode]"
+msgstr "[=devnode]"
+
+#: src/main.cpp:109
+msgid "uses an Extech Power Analyzer for measurements"
+msgstr "использует Extech Power Analyzer для измерений"
+
+#: src/main.cpp:110 src/main.cpp:111
+msgid "[=FILENAME]"
+msgstr "[=FILENAME]"
+
+#: src/main.cpp:110
+msgid "generate a html report"
+msgstr "генерация html-отчёта"
+
+#: src/main.cpp:111
+msgid "generate a csv report"
+msgstr "генерация csv-отчёта"
+
+#: src/main.cpp:112
+msgid "[=seconds]"
+msgstr "[=seconds]"
+
+#: src/main.cpp:112
+msgid "generate a report for 'x' seconds"
+msgstr "генерация отчёта за 'x' секунд"
+
+#: src/main.cpp:113
+msgid "[=iterations] number of times to run each test"
+msgstr "[=iterations] число итераций запуска каждого теста"
+
+#: src/main.cpp:114
+msgid "[=workload]"
+msgstr "[=workload]"
+
+#: src/main.cpp:114
+msgid "file to execute for workload"
+msgstr "файл для запуска нагрузки"
+
+#: src/main.cpp:115
+msgid "suppress stderr output"
+msgstr "подавить вывод в stderr"
+
+#: src/main.cpp:116
+msgid "print this help menu"
+msgstr "вывести данное меню помощи"
+
+#: src/main.cpp:118
+msgid "For more help please refer to the README"
+msgstr "Для более подробной информации обратитесь к файлу README"
+
+#: src/main.cpp:195
+#, c-format
+msgid "Unknown issue running workload!\n"
+msgstr "В процессе работы возникла неизвестная ошибка!\\n"
+
+#: src/main.cpp:236
+msgid "PowerTOP is out of memory. PowerTOP is Aborting"
+msgstr "Недостаточно памяти для PowerTOP. Прерывание PowerTOP"
+
+#: src/main.cpp:244
+#, c-format
+msgid "Preparing to take measurements\n"
+msgstr "Подготовка к взятию измерений\\n"
+
+#: src/main.cpp:249
+#, c-format
+msgid "Taking %d measurement(s) for a duration of %d second(s) each.\n"
+msgstr "Взятие %d измерение(-ий) длительностью %d секунд(а) каждое.\\n"
+
+#: src/main.cpp:251
+#, c-format
+msgid "Measuring workload %s.\n"
+msgstr "Замер нагрузки %s.\\n"
+
+#: src/main.cpp:274
+#, c-format
+msgid "PowerTOP "
+msgstr "PowerTOP"
+
+#: src/main.cpp:275 src/main.cpp:303
+#, c-format
+msgid "exiting...\n"
+msgstr "выход...\\n"
+
+#: src/main.cpp:302
+#, c-format
+msgid "Failed to mount debugfs!\n"
+msgstr "Не удалось подмонтировать debugfs!\\n"
+
+#: src/main.cpp:394
+#, c-format
+msgid "Quite mode failed!\n"
+msgstr "Ошибка режима \"quite\"!\\n"
+
+#: src/main.cpp:440
+msgid "Leaving PowerTOP"
+msgstr "Завершение PowerTOP"

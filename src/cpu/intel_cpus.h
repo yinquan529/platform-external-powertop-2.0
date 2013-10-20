@@ -25,6 +25,8 @@
 #include <stdint.h>
 #include <sys/time.h>
 
+#include "cpu.h"
+
 
 #define MSR_TSC				0x10
 #define MSR_NEHALEM_PLATFORM_INFO	0xCE
@@ -35,10 +37,13 @@
 #define MSR_PKG_C3_RESIDENCY		0x3F8
 #define MSR_PKG_C6_RESIDENCY		0x3F9
 #define MSR_PKG_C7_RESIDENCY		0x3FA
+#define MSR_PKG_C8_RESIDENCY		0x630
+#define MSR_PKG_C9_RESIDENCY		0x631
+#define MSR_PKG_C10_RESIDENCY		0x632
+#define MSR_CORE_C1_RESIDENCY		0x660
 #define MSR_CORE_C3_RESIDENCY		0x3FC
 #define MSR_CORE_C6_RESIDENCY		0x3FD
 #define MSR_CORE_C7_RESIDENCY		0x3FE
-
 
 class nhm_package: public cpu_package
 {
@@ -47,28 +52,29 @@ private:
 	uint64_t	c3_before, c3_after;
 	uint64_t	c6_before, c6_after;
 	uint64_t	c7_before, c7_after;
+	uint64_t	c8_before, c8_after;
+	uint64_t	c9_before, c9_after;
+	uint64_t	c10_before, c10_after;
 	uint64_t	tsc_before, tsc_after;
 
 	uint64_t	last_stamp;
 	uint64_t	total_stamp;
-
-	void		account_freq(uint64_t frequency, uint64_t duration);
-
 public:
+	int		has_c2c7_res;
+	int		has_c3_res;
+	int		has_c8c9c10_res;
+	nhm_package(int model);
 	virtual void	measurement_start(void);
 	virtual void	measurement_end(void);
 	virtual int     can_collapse(void) { return 0;};
 
 	virtual char *  fill_pstate_line(int line_nr, char *buffer);
-
-	virtual void    calculate_freq(uint64_t time);
-	virtual void	change_effective_frequency(uint64_t time, uint64_t freq);
-
 };
 
 class nhm_core: public cpu_core
 {
 private:
+	uint64_t	c1_before, c1_after;
 	uint64_t	c3_before, c3_after;
 	uint64_t	c6_before, c6_after;
 	uint64_t	c7_before, c7_after;
@@ -76,18 +82,16 @@ private:
 
 	uint64_t	last_stamp;
 	uint64_t	total_stamp;
-
-	void		account_freq(uint64_t frequency, uint64_t duration);
 public:
+	int		has_c1_res;
+	int		has_c2c7_res;
+	int		has_c3_res;
+	nhm_core(int model);
 	virtual void	measurement_start(void);
 	virtual void	measurement_end(void);
 	virtual int     can_collapse(void) { return 0;};
 
 	virtual char *  fill_pstate_line(int line_nr, char *buffer);
-
-	virtual void    calculate_freq(uint64_t time);
-	virtual void	change_effective_frequency(uint64_t time, uint64_t freq);
-
 };
 
 class nhm_cpu: public cpu_linux
@@ -101,8 +105,6 @@ private:
 
 	uint64_t	last_stamp;
 	uint64_t	total_stamp;
-
-	void		account_freq(uint64_t frequency, uint64_t duration);
 public:
 	virtual void	measurement_start(void);
 	virtual void	measurement_end(void);
@@ -111,12 +113,6 @@ public:
 	virtual char *  fill_pstate_name(int line_nr, char *buffer);
 	virtual char *  fill_pstate_line(int line_nr, char *buffer);
 	virtual int	has_pstate_level(int level);
-
-	virtual void    change_freq(uint64_t time, int freq);
-	virtual void	change_effective_frequency(uint64_t time, uint64_t freq);
-	virtual void    go_idle(uint64_t time);
-	virtual void    go_unidle(uint64_t time);
-
 };
 
 class atom_package: public cpu_package
@@ -135,8 +131,6 @@ public:
 
 };
 
-
-extern int has_c2c7_res;
 
 class i965_core: public cpu_core
 {
@@ -158,5 +152,8 @@ public:
 	virtual char *  fill_cstate_line(int line_nr, char *buffer, const char *separator);
 	virtual int	has_pstate_level(int level) { return 0; };
 	virtual int	has_pstates(void) { return 0; };
+	virtual void	wiggle(void) { };
 
 };
+
+int is_supported_intel_cpu(int model);
