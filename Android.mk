@@ -1,5 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
+include $(LOCAL_PATH)/android.config
 
 LOCAL_MODULE := powertop
 
@@ -19,6 +20,11 @@ LOCAL_GENERATED_SOURCES += $(GEN_CSS_H)
 
 #LOCAL_CFLAGS += -Wall -O2 -g -fno-omit-frame-pointer -fstack-protector -Wshadow -Wformat -D_FORTIFY_SOURCE=2
 #LOCAL_CPPFLAGS += -Wall -O2 -g -fno-omit-frame-pointer
+
+ifdef HAVE_LIBNL20
+LOCAL_CFLAGS += -DHAVE_LIBNL20
+LOCAL_CPPFLAGS += -DHAVE_LIBNL20
+endif
 
 LOCAL_CPPFLAGS += -DHAVE_NO_PCI \
 		-DDEFAULT_TERM=\"xterm\" \
