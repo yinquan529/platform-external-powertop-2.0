@@ -291,6 +291,18 @@ void enumerate_cpus(void)
 				number = -2;
 			}
 		}
+		/* In the current ARM kernel we don't have bogomips number, using CPU revision */
+		if (strncasecmp(line, "CPU revision\t", 13) == 0) {
+			if (number == -1) {
+				/* Not all /proc/cpuinfo include "processor\t". */
+				number = 0;
+			}
+			if (number >= 0) {
+				handle_one_cpu(number, vendor, family, model);
+				set_max_cpu(number);
+				number = -2;
+			}
+		}
 	}
 
 
