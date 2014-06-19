@@ -71,6 +71,7 @@ LOCAL_SRC_FILES += \
 	src/report/report-formatter-base.cpp \
 	src/report/report-formatter-csv.cpp \
 	src/report/report-formatter-html.cpp \
+	src/report/report-data-html.cpp \
 	src/main.cpp \
 	src/tuning/tuning.cpp \
 	src/tuning/tuningusb.cpp \
@@ -81,7 +82,6 @@ LOCAL_SRC_FILES += \
 	src/tuning/iw.h \
 	src/tuning/tunable.cpp \
 	src/tuning/tuningsysfs.cpp \
-	src/tuning/cpufreq.cpp \
 	src/tuning/wifi.cpp \
 	src/perf/perf_bundle.cpp \
 	src/perf/perf.cpp \
