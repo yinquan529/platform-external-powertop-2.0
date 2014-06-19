@@ -291,13 +291,14 @@ void display_devfreq_devices(void)
 
 void report_devfreq_devices(void)
 {
-
-	char buffer[512];
-	unsigned int i, j;
-
 	if (!is_enabled) {
 		return;
 	}
+
+/* todo: adapt to new report format */
+#if 0
+	char buffer[512];
+	unsigned int i, j;
 
 	report.begin_section(SECTION_DEVFREQ);
 	report.add_header("Device Frequency Report");
@@ -327,6 +328,8 @@ void report_devfreq_devices(void)
 			report.add(buffer);
 		}
 	}
+#endif
+
 }
 
 void clear_all_devfreq()
